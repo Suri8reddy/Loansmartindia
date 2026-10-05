@@ -1,0 +1,2 @@
+ALTER TABLE public.leads ADD COLUMN IF NOT EXISTS followup_reminded_at timestamptz;
+CREATE INDEX IF NOT EXISTS idx_leads_followup_due ON public.leads (next_followup_at) WHERE next_followup_at IS NOT NULL;

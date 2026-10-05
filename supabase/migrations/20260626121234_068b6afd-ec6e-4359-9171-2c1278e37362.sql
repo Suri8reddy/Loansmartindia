@@ -1,0 +1,1 @@
+ALTER TABLE public.loan_applications ALTER COLUMN customer_id DROP NOT NULL;

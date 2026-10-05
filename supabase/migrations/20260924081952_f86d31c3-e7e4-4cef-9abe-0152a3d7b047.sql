@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Public read bank-logos" ON storage.objects;

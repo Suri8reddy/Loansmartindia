@@ -1,0 +1,1 @@
+CREATE POLICY "Public read active banks" ON public.banks FOR SELECT TO anon, authenticated USING (is_active = true);

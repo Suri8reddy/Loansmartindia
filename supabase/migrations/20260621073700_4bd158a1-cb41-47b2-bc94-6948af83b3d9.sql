@@ -1,0 +1,1 @@
+ALTER TABLE public.leads ADD COLUMN IF NOT EXISTS application_id uuid REFERENCES public.loan_applications(id) ON DELETE SET NULL;
