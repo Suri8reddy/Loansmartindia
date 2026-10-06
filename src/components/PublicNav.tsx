@@ -9,7 +9,7 @@ export function PublicNav() {
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link to="/" className="flex items-center">
-          <img src="/logo.jpeg" alt="Loans Mart India" className="h-14 md:h-16 w-auto object-contain" />
+          <img src="/logo.jpeg?v=2" alt="Loans Mart India" className="h-14 md:h-16 w-auto object-contain" />
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link to="/" className="text-foreground/70 hover:text-foreground">Home</Link>
