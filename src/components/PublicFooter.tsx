@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import logoFull from "@/assets/loansmart-logo-full.asset.json";
 
 export function PublicFooter() {
   return (
     <footer className="border-t bg-muted/30 mt-20">
       <div className="container mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
         <div>
-          <img src={logoFull.url} alt="Loans Mart India" className="h-14 w-auto mb-3" />
+          <img src="/logo.jpeg" alt="Loans Mart India" className="h-14 w-auto mb-3 object-contain" />
           <p className="text-sm text-muted-foreground">Smart Loans. Better Tomorrows. Your trusted partner for hassle-free loans across India.</p>
         </div>
         <div>

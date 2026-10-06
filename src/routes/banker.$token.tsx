@@ -8,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { DocumentViewer } from "@/components/DocumentViewer";
 import { getBankerShare } from "@/lib/banker-share.functions";
-import logoFull from "@/assets/loansmart-logo-full.asset.json";
 
 export const Route = createFileRoute("/banker/$token")({
   head: () => ({ meta: [
@@ -101,7 +100,7 @@ function BankerView() {
 }
 
 function BrandHeader() {
-  return <header className="border-b bg-background"><div className="mx-auto flex min-h-20 max-w-5xl items-center justify-between gap-4 px-4 py-3"><img src={logoFull.url} alt="Loans Mart India" className="h-12 w-auto sm:h-14" /><div className="flex items-center gap-2 text-xs font-medium text-muted-foreground"><ShieldCheck className="h-4 w-4 text-success" /> Secure read-only access</div></div></header>;
+  return <header className="border-b bg-background"><div className="mx-auto flex min-h-20 max-w-5xl items-center justify-between gap-4 px-4 py-3"><img src="/logo.jpeg" alt="Loans Mart India" className="h-12 w-auto sm:h-14 object-contain" /><div className="flex items-center gap-2 text-xs font-medium text-muted-foreground"><ShieldCheck className="h-4 w-4 text-success" /> Secure read-only access</div></div></header>;
 }
 
 function Unavailable({ title, message }: { title: string; message: string }) {

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { NotificationBell } from "@/components/NotificationBell";
 import { LogOut, Menu } from "lucide-react";
-import logoIcon from "@/assets/loansmart-logo-icon.asset.json";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
@@ -62,7 +61,7 @@ export function PortalShell({
     <div className="flex min-h-screen w-full bg-background">
       <aside className={`hidden md:flex w-64 flex-col border-r ${sidebarBg}`}>
         <div className="h-16 flex items-center gap-2 px-6 border-b border-white/10 font-semibold">
-          <img src={logoIcon.url} alt="Loans Mart India" className="h-8 w-8 rounded-md" />
+          <img src="/logo.jpeg" alt="Loans Mart India" className="h-8 w-8 rounded-md object-contain" />
           <span>{title}</span>
         </div>
         <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
@@ -86,7 +85,7 @@ export function PortalShell({
             <SheetContent side="left" className={`p-0 w-72 flex flex-col ${sidebarBg}`}>
               <SheetTitle className="sr-only">{title} navigation</SheetTitle>
               <div className="h-16 flex items-center gap-2 px-6 border-b border-white/10 font-semibold">
-                <img src={logoIcon.url} alt="Loans Mart India" className="h-8 w-8 rounded-md" />
+                <img src="/logo.jpeg" alt="Loans Mart India" className="h-8 w-8 rounded-md object-contain" />
                 <span>{title}</span>
               </div>
               <nav className="flex-1 p-3 space-y-1 overflow-y-auto">

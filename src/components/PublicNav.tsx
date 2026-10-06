@@ -1,8 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
-import logoFull from "@/assets/loansmart-logo-full.asset.json";
-
 export function PublicNav() {
   const { user, isAdmin, isTeam } = useAuth();
   const portalLink = isAdmin ? "/admin/dashboard" : isTeam ? "/team/dashboard" : "/customer/dashboard";
@@ -11,7 +9,7 @@ export function PublicNav() {
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link to="/" className="flex items-center">
-          <img src={logoFull.url} alt="Loans Mart India" className="h-14 md:h-16 w-auto" />
+          <img src="/logo.jpeg" alt="Loans Mart India" className="h-14 md:h-16 w-auto object-contain" />
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link to="/" className="text-foreground/70 hover:text-foreground">Home</Link>

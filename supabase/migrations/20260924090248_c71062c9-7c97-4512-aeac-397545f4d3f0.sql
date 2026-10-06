@@ -124,5 +124,10 @@ $$;
 REVOKE ALL ON FUNCTION public.process_followup_reminders() FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.process_followup_reminders() TO service_role;
 
-SELECT cron.unschedule(jobid) FROM cron.job WHERE jobname = 'lead-followup-reminders';
-SELECT cron.schedule('lead-followup-reminders', '*/5 * * * *', 'SELECT public.process_followup_reminders();');
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM pg_extension WHERE extname = 'pg_cron') AND EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'cron' AND table_name = 'job') THEN
+    PERFORM cron.unschedule(jobid) FROM cron.job WHERE jobname = 'lead-followup-reminders';
+    PERFORM cron.schedule('lead-followup-reminders', '*/5 * * * *', 'SELECT public.process_followup_reminders();');
+  END IF;
+END $$;
