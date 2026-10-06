@@ -6,7 +6,7 @@ export function PublicFooter() {
       <div className="container mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
         <div>
           <Link to="/" className="inline-block mb-3">
-            <img src="/logo.jpeg?v=2" alt="Loans Mart India" className="h-24 md:h-28 w-auto object-contain" />
+            <img src="/loansmart-india.png" alt="Loans Mart India" className="h-24 md:h-28 w-auto object-contain" />
           </Link>
           <p className="text-sm text-muted-foreground">Smart Loans. Better Tomorrows. Your trusted partner for hassle-free loans across India.</p>
         </div>
