@@ -7,13 +7,13 @@ export function PublicNav() {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-emerald-700 via-primary to-slate-900 text-white text-xs md:text-sm font-bold py-2.5 px-4 text-center tracking-widest uppercase border-b shadow-sm">
+      <div className="bg-gradient-to-r from-emerald-800 via-primary to-slate-900 text-white text-xs md:text-sm font-bold py-2.5 px-4 text-center tracking-widest uppercase border-b shadow-sm">
         — SMART LOANS. BETTER TOMORROWS. —
       </div>
-      <header className="sticky top-0 z-40 w-full border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        <div className="container mx-auto flex h-28 md:h-32 items-center justify-between px-4 py-2">
+      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 shadow-xs">
+        <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 py-2">
           <Link to="/" className="flex items-center">
-            <img src="/loansmart-india.png" alt="Loans Mart India" className="h-24 md:h-28 lg:h-30 w-auto object-contain" />
+            <img src="/loansmart-india.png" alt="Loans Mart India" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
           <nav className="hidden md:flex items-center gap-8 text-base font-semibold">
             <Link to="/" className="text-foreground/80 hover:text-primary transition-colors">Home</Link>
@@ -23,11 +23,11 @@ export function PublicNav() {
           </nav>
           <div className="flex items-center gap-3">
             {user ? (
-              <Button asChild size="lg"><Link to={portalLink}>My Portal</Link></Button>
+              <Button asChild size="lg" className="px-6 font-semibold shadow-sm"><Link to={portalLink}>My Portal</Link></Button>
             ) : (
               <>
-                <Button asChild variant="ghost" size="md"><Link to="/login">Login</Link></Button>
-                <Button asChild size="md" className="font-semibold"><Link to="/register">Get Started</Link></Button>
+                <Button asChild variant="ghost" size="default" className="px-4 font-semibold"><Link to="/login">Login</Link></Button>
+                <Button asChild size="default" className="px-6 font-semibold shadow-sm rounded-lg"><Link to="/register">Get Started</Link></Button>
               </>
             )}
           </div>
