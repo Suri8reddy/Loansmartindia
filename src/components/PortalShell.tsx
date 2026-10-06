@@ -61,7 +61,11 @@ export function PortalShell({
     <div className="flex min-h-screen w-full bg-background">
       <aside className={`hidden md:flex w-64 flex-col border-r ${sidebarBg}`}>
         <div className="h-16 flex items-center gap-2 px-6 border-b border-white/10 font-semibold">
-          <img src="/logo.jpeg" alt="Loans Mart India" className="h-8 w-8 rounded-md object-contain" />
+          <img
+            src="/logo.jpeg"
+            alt="Loans Mart India"
+            className="h-9 w-9 rounded-lg object-contain transition-all duration-300 hover:scale-110 hover:brightness-110 hover:drop-shadow-[0_2px_10px_rgba(234,179,8,0.5)]"
+          />
           <span>{title}</span>
         </div>
         <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
@@ -85,7 +89,11 @@ export function PortalShell({
             <SheetContent side="left" className={`p-0 w-72 flex flex-col ${sidebarBg}`}>
               <SheetTitle className="sr-only">{title} navigation</SheetTitle>
               <div className="h-16 flex items-center gap-2 px-6 border-b border-white/10 font-semibold">
-                <img src="/logo.jpeg" alt="Loans Mart India" className="h-8 w-8 rounded-md object-contain" />
+                <img
+                  src="/logo.jpeg"
+                  alt="Loans Mart India"
+                  className="h-9 w-9 rounded-lg object-contain transition-all duration-300 hover:scale-110 hover:brightness-110 hover:drop-shadow-[0_2px_10px_rgba(234,179,8,0.5)]"
+                />
                 <span>{title}</span>
               </div>
               <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
