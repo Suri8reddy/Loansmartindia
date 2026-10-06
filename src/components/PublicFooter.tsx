@@ -5,12 +5,8 @@ export function PublicFooter() {
     <footer className="border-t bg-muted/30 mt-20">
       <div className="container mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
         <div>
-          <Link to="/" className="group inline-block mb-3 transition-transform duration-300 active:scale-95">
-            <img
-              src="/logo.jpeg"
-              alt="Loans Mart India"
-              className="h-14 w-auto object-contain rounded-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 group-hover:drop-shadow-[0_4px_16px_rgba(234,179,8,0.4)]"
-            />
+          <Link to="/" className="inline-block mb-3">
+            <img src="/logo.jpeg" alt="Loans Mart India" className="h-14 w-auto object-contain" />
           </Link>
           <p className="text-sm text-muted-foreground">Smart Loans. Better Tomorrows. Your trusted partner for hassle-free loans across India.</p>
         </div>
