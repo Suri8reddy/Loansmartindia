@@ -62,7 +62,7 @@ function PdfViewer({ signedUrl }: { signedUrl: string }) {
           fetch(signedUrl),
         ]);
         if (!response.ok) throw new Error("Unable to load this PDF");
-        GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
+        GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs`;
         loadingTask = getDocument({ data: await response.arrayBuffer() });
         const pdf = await loadingTask.promise;
         const loadedPages = await Promise.all(Array.from({ length: pdf.numPages }, (_, index) => pdf.getPage(index + 1)));
