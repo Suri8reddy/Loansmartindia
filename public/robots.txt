@@ -1,5 +1,14 @@
-
 User-agent: *
 Allow: /
 
+# Private & Authenticated Portal Paths
+Disallow: /admin
+Disallow: /admin/
+Disallow: /team
+Disallow: /team/
+Disallow: /customer
+Disallow: /customer/
+Disallow: /banker/
+
+# Public Sitemap
 Sitemap: https://loansmartindia.com/sitemap.xml
