@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useCompanyContact } from "@/lib/company-info";
-import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ShieldCheck, Heart } from "lucide-react";
 
 export function PublicFooter() {
   const contact = useCompanyContact();
@@ -86,8 +86,18 @@ export function PublicFooter() {
             Loans Mart India does not charge any upfront application or file approval fees to borrowers.
             Never transfer processing fees to individual bank accounts.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground pt-2 border-t border-border/50 gap-2">
+          <div className="flex flex-col md:flex-row items-center justify-between text-xs text-muted-foreground pt-3 border-t border-border/50 gap-2.5">
             <span>© {new Date().getFullYear()} Loans Mart India. All rights reserved.</span>
+
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <span>Developed with</span>
+              <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500 inline-block animate-pulse" aria-label="love" />
+              <span>by</span>
+              <span className="font-semibold text-foreground tracking-tight">
+                NextCode Company
+              </span>
+            </div>
+
             <div className="flex items-center gap-4 text-xs">
               <Link to="/privacy" className="hover:underline">Privacy</Link>
               <Link to="/terms" className="hover:underline">Terms</Link>
