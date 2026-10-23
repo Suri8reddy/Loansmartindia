@@ -26,7 +26,26 @@ const schema = z.object({
 });
 
 export const Route = createFileRoute("/apply")({
-  head: () => ({ meta: [{ title: "Apply for a Loan — Loans Mart India" }, { name: "description", content: "Submit your details and our team will reach out." }] }),
+  head: () => ({
+    meta: [
+      { title: "Apply for a Loan Online — Quick Approvals | Loans Mart India" },
+      {
+        name: "description",
+        content:
+          "Apply online for personal, home, business, or car loans with Loans Mart India. Free application, rapid evaluation, minimal documentation, and transparent offers from 50+ partner banks.",
+      },
+      { property: "og:title", content: "Apply for a Loan Online — Quick Approvals | Loans Mart India" },
+      {
+        property: "og:description",
+        content:
+          "Submit your loan requirement in 2 minutes. Transparent terms, zero advance fees, and live portal tracking with Loans Mart India.",
+      },
+      { property: "og:url", content: "https://loansmartindia.com/apply" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://loansmartindia.com/apply" }],
+  }),
   component: ApplyPage,
 });
 

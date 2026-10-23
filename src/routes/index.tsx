@@ -24,13 +24,56 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Loans Mart India — Smart Loans. Better Tomorrows." },
-      { name: "description", content: "Compare and apply for personal, home, business and car loans. Get approved fast." },
+      {
+        name: "description",
+        content:
+          "Compare and apply for personal, home, business, and car loans from 50+ leading partner banks and RBI-registered lenders. Zero upfront fees and fast approvals.",
+      },
       { property: "og:title", content: "Loans Mart India — Smart Loans. Better Tomorrows." },
-      { property: "og:description", content: "Compare and apply for personal, home, business and car loans. Get approved fast." },
+      {
+        property: "og:description",
+        content:
+          "Compare and apply for personal, home, business, and car loans with transparent terms and dedicated advisor guidance.",
+      },
+      { property: "og:url", content: "https://loansmartindia.com/" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Loans Mart India" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image", content: "/loansmart-india.png" },
       { name: "twitter:image", content: "/loansmart-india.png" },
+    ],
+    links: [{ rel: "canonical", href: "https://loansmartindia.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FinancialService",
+          name: "Loans Mart India",
+          url: "https://loansmartindia.com",
+          logo: "https://loansmartindia.com/loansmart-india.png",
+          description:
+            "Authorized digital loan facilitator and direct selling partner offering comparisons and applications for personal, home, business, and car loans.",
+          telephone: "+91-98765-43210",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Loans Mart India, FinTech Tower, Bandra Kurla Complex (BKC)",
+            addressLocality: "Mumbai",
+            addressRegion: "Maharashtra",
+            postalCode: "400051",
+            addressCountry: "IN",
+          },
+          priceRange: "₹₹",
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              opens: "09:30",
+              closes: "18:30",
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: HomePage,
@@ -104,10 +147,13 @@ function HomePage() {
       <div className="border-y bg-muted/40 overflow-hidden">
         <div className="container mx-auto px-4 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground">
           <span className="font-medium text-foreground">50+ bank & NBFC partners</span>
-          <span>•</span><span>Zero customer fees</span>
-          <span>•</span><span>Approval in 24-48 hours</span>
+          <span>•</span><span>Zero customer consultation fees</span>
+          <span>•</span><span>In-principle approval in 24-48 hours*</span>
           <span>•</span><span>100% digital tracking</span>
-          <span>•</span><span>RBI-registered lenders</span>
+          <span>•</span>
+          <Link to="/disclosures" className="hover:text-primary underline text-foreground font-medium">
+            RBI-registered lenders & disclosures →
+          </Link>
         </div>
       </div>
 

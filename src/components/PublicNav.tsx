@@ -26,11 +26,20 @@ export function PublicNav() {
               <Button asChild size="lg" className="px-6 font-semibold shadow-sm"><Link to={portalLink}>My Portal</Link></Button>
             ) : (
               <>
-                <Button asChild variant="ghost" size="default" className="px-4 font-semibold"><Link to="/login">Login</Link></Button>
-                <Button asChild size="default" className="px-6 font-semibold shadow-sm rounded-lg"><Link to="/register">Get Started</Link></Button>
+                <Button asChild variant="ghost" size="default" className="px-3 sm:px-4 font-semibold text-sm sm:text-base"><Link to="/login">Login</Link></Button>
+                <Button asChild size="default" className="px-4 sm:px-6 font-semibold shadow-sm rounded-lg text-sm sm:text-base"><Link to="/register">Get Started</Link></Button>
               </>
             )}
           </div>
+        </div>
+
+        {/* Mobile quick navigation bar */}
+        <div className="flex md:hidden border-t bg-background/95 px-4 py-2.5 justify-around text-xs font-semibold text-foreground/80">
+          <Link to="/" className="hover:text-primary transition-colors py-1">Home</Link>
+          <Link to="/loans" className="hover:text-primary transition-colors py-1">Loans</Link>
+          <Link to="/apply" className="hover:text-primary transition-colors py-1 text-primary">Apply Now</Link>
+          <Link to="/contact" className="hover:text-primary transition-colors py-1">Contact</Link>
+          <Link to="/disclosures" className="hover:text-primary transition-colors py-1 text-muted-foreground">Disclosures</Link>
         </div>
       </header>
     </>

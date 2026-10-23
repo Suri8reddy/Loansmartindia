@@ -14,10 +14,13 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CustomerRouteImport } from './routes/customer'
+import { Route as DisclosuresRouteImport } from './routes/disclosures'
 import { Route as LoansRouteImport } from './routes/loans'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminApplicationsRouteImport } from './routes/admin.applications'
 import { Route as AdminBanksRouteImport } from './routes/admin.banks'
 import { Route as AdminCommissionsRouteImport } from './routes/admin.commissions'
@@ -68,6 +71,11 @@ const CustomerRoute = CustomerRouteImport.update({
   path: '/customer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DisclosuresRoute = DisclosuresRouteImport.update({
+  id: '/disclosures',
+  path: '/disclosures',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoansRoute = LoansRouteImport.update({
   id: '/loans',
   path: '/loans',
@@ -78,6 +86,11 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
@@ -86,6 +99,11 @@ const RegisterRoute = RegisterRouteImport.update({
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
@@ -215,10 +233,13 @@ export interface FileRoutesByFullPath {
   '/apply': typeof ApplyRoute
   '/contact': typeof ContactRoute
   '/customer': typeof CustomerRouteWithChildren
+  '/disclosures': typeof DisclosuresRoute
   '/loans': typeof LoansRouteWithChildren
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/register': typeof RegisterRoute
   '/team': typeof TeamRouteWithChildren
+  '/terms': typeof TermsRoute
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/banks': typeof AdminBanksRoute
   '/admin/commissions': typeof AdminCommissionsRoute
@@ -250,10 +271,13 @@ export interface FileRoutesByTo {
   '/apply': typeof ApplyRoute
   '/contact': typeof ContactRoute
   '/customer': typeof CustomerRouteWithChildren
+  '/disclosures': typeof DisclosuresRoute
   '/loans': typeof LoansRouteWithChildren
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/register': typeof RegisterRoute
   '/team': typeof TeamRouteWithChildren
+  '/terms': typeof TermsRoute
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/banks': typeof AdminBanksRoute
   '/admin/commissions': typeof AdminCommissionsRoute
@@ -286,10 +310,13 @@ export interface FileRoutesById {
   '/apply': typeof ApplyRoute
   '/contact': typeof ContactRoute
   '/customer': typeof CustomerRouteWithChildren
+  '/disclosures': typeof DisclosuresRoute
   '/loans': typeof LoansRouteWithChildren
   '/login': typeof LoginRoute
+  '/privacy': typeof PrivacyRoute
   '/register': typeof RegisterRoute
   '/team': typeof TeamRouteWithChildren
+  '/terms': typeof TermsRoute
   '/admin/applications': typeof AdminApplicationsRouteWithChildren
   '/admin/banks': typeof AdminBanksRoute
   '/admin/commissions': typeof AdminCommissionsRoute
@@ -323,10 +350,13 @@ export interface FileRouteTypes {
     | '/apply'
     | '/contact'
     | '/customer'
+    | '/disclosures'
     | '/loans'
     | '/login'
+    | '/privacy'
     | '/register'
     | '/team'
+    | '/terms'
     | '/admin/applications'
     | '/admin/banks'
     | '/admin/commissions'
@@ -358,10 +388,13 @@ export interface FileRouteTypes {
     | '/apply'
     | '/contact'
     | '/customer'
+    | '/disclosures'
     | '/loans'
     | '/login'
+    | '/privacy'
     | '/register'
     | '/team'
+    | '/terms'
     | '/admin/applications'
     | '/admin/banks'
     | '/admin/commissions'
@@ -393,10 +426,13 @@ export interface FileRouteTypes {
     | '/apply'
     | '/contact'
     | '/customer'
+    | '/disclosures'
     | '/loans'
     | '/login'
+    | '/privacy'
     | '/register'
     | '/team'
+    | '/terms'
     | '/admin/applications'
     | '/admin/banks'
     | '/admin/commissions'
@@ -429,10 +465,13 @@ export interface RootRouteChildren {
   ApplyRoute: typeof ApplyRoute
   ContactRoute: typeof ContactRoute
   CustomerRoute: typeof CustomerRouteWithChildren
+  DisclosuresRoute: typeof DisclosuresRoute
   LoansRoute: typeof LoansRouteWithChildren
   LoginRoute: typeof LoginRoute
+  PrivacyRoute: typeof PrivacyRoute
   RegisterRoute: typeof RegisterRoute
   TeamRoute: typeof TeamRouteWithChildren
+  TermsRoute: typeof TermsRoute
   BankerTokenRoute: typeof BankerTokenRoute
 }
 
@@ -473,6 +512,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CustomerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/disclosures': {
+      id: '/disclosures'
+      path: '/disclosures'
+      fullPath: '/disclosures'
+      preLoaderRoute: typeof DisclosuresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/loans': {
       id: '/loans'
       path: '/loans'
@@ -487,6 +533,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/register': {
       id: '/register'
       path: '/register'
@@ -499,6 +552,13 @@ declare module '@tanstack/react-router' {
       path: '/team'
       fullPath: '/team'
       preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/applications': {
@@ -785,10 +845,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApplyRoute: ApplyRoute,
   ContactRoute: ContactRoute,
   CustomerRoute: CustomerRouteWithChildren,
+  DisclosuresRoute: DisclosuresRoute,
   LoansRoute: LoansRouteWithChildren,
   LoginRoute: LoginRoute,
+  PrivacyRoute: PrivacyRoute,
   RegisterRoute: RegisterRoute,
   TeamRoute: TeamRouteWithChildren,
+  TermsRoute: TermsRoute,
   BankerTokenRoute: BankerTokenRoute,
 }
 export const routeTree = rootRouteImport

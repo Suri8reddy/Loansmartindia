@@ -15,13 +15,34 @@ const icons: Record<string, any> = { Wallet, Home, Briefcase, Car };
 
 export const Route = createFileRoute("/loans/$slug")({
   component: LoanDetail,
-  head: ({ params }) => ({
-    meta: [
-      { title: `${params.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())} — Loans Mart India` },
-      { name: "description", content: `Apply for ${params.slug.replace(/-/g, " ")} with leading partner banks.` },
-      { property: "og:title", content: `${params.slug.replace(/-/g, " ")} — Loans Mart India` },
-    ],
-  }),
+  head: ({ params }) => {
+    const formattedTitle = params.slug
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+    const canonicalUrl = `https://loansmartindia.com/loans/${params.slug}`;
+
+    return {
+      meta: [
+        { title: `${formattedTitle} — Interest Rates, Eligibility & Apply Online | Loans Mart India` },
+        {
+          name: "description",
+          content: `Compare low interest rates and flexible tenures for ${formattedTitle} in India. Check eligibility criteria, required KYC documents, and apply online through Loans Mart India.`,
+        },
+        {
+          property: "og:title",
+          content: `${formattedTitle} — Interest Rates & Apply Online | Loans Mart India`,
+        },
+        {
+          property: "og:description",
+          content: `Get fast approval and competitive rates on ${formattedTitle} from top RBI-registered partner banks.`,
+        },
+        { property: "og:url", content: canonicalUrl },
+        { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
+      links: [{ rel: "canonical", href: canonicalUrl }],
+    };
+  },
   errorComponent: ErrBoundary,
   notFoundComponent: () => (
     <div>
@@ -175,6 +196,16 @@ function LoanDetail() {
 
       {/* FAQs */}
       <FaqSection faqs={[...faqs, ...generalFaqs]} subtitle={`Common questions about ${loan.name}.`} />
+
+      {/* Compliance / Disclosure Banner */}
+      <section className="container mx-auto px-4 py-4 max-w-4xl text-center">
+        <p className="text-xs text-muted-foreground bg-muted/40 p-3.5 rounded-lg border">
+          <strong>Important Note:</strong> Indicative rates and loan parameters are provided by our partner lending institutions and are subject to underwriting criteria and RBI guidelines. For complete details on APR range, fees, and partner bank list, please review our{" "}
+          <Link to="/disclosures" className="text-primary underline font-medium">
+            Regulatory Disclosures
+          </Link>.
+        </p>
+      </section>
 
       {/* CTA */}
       <section className="container mx-auto px-4 py-16 text-center">

@@ -8,7 +8,26 @@ import { supabase } from "@/integrations/supabase/client";
 
 
 export const Route = createFileRoute("/loans")({
-  head: () => ({ meta: [{ title: "Loan Products — Loans Mart India" }, { name: "description", content: "Browse all our loan products with eligibility and benefits." }] }),
+  head: () => ({
+    meta: [
+      { title: "Loan Products & Low Interest Rates — Loans Mart India" },
+      {
+        name: "description",
+        content:
+          "Explore and compare personal, home, business, and car loans from 50+ leading partner banks. Check interest rates, eligibility criteria, and calculate EMIs with Loans Mart India.",
+      },
+      { property: "og:title", content: "Loan Products & Low Interest Rates — Loans Mart India" },
+      {
+        property: "og:description",
+        content:
+          "Compare personal, home, business, and vehicle loans across premier Indian banks and RBI-registered NBFCs.",
+      },
+      { property: "og:url", content: "https://loansmartindia.com/loans" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://loansmartindia.com/loans" }],
+  }),
   component: LoansRoute,
 });
 
