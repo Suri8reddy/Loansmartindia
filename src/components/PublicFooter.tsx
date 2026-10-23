@@ -93,9 +93,14 @@ export function PublicFooter() {
               <span>Developed with</span>
               <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500 inline-block animate-pulse" aria-label="love" />
               <span>by</span>
-              <span className="font-semibold text-foreground tracking-tight">
+              <a
+                href="https://nextcodecompany.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-foreground hover:text-primary transition-colors tracking-tight underline-offset-4 hover:underline"
+              >
                 NextCode Company
-              </span>
+              </a>
             </div>
 
             <div className="flex items-center gap-4 text-xs">
